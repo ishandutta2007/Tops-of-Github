@@ -5,7 +5,7 @@ import time
 
 
 def get_access_token():
-    with open("../access_token.txt", "r") as f:
+    with open("access_token.txt", "r") as f:
         access_token = f.read().strip()
     return access_token
 

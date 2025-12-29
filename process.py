@@ -4,83 +4,83 @@ import os
 import pandas as pd
 from common import get_graphql_data, write_text, write_ranking_repo
 import inspect
-
+import pprint as pp
 # languages = ['Python']  # For test
 # languages_md = ['Python']  # For test
 # table_of_contents = """
 # * [Python](#python)"""  # For test
 languages = [
-    "ActionScript",
-    "C",
-    "CSharp",
-    "CPP",
-    "Clojure",
-    "CoffeeScript",
-    "CSS",
-    "Dart",
-    "DM",
-    "Elixir",
-    "Go",
-    "Groovy",
-    "Haskell",
-    "HTML",
-    "Java",
-    "JavaScript",
-    "Julia",
-    "Kotlin",
-    "Lua",
-    "MATLAB",
-    "Objective-C",
-    "Perl",
-    "PHP",
-    "PowerShell",
+    # "ActionScript",
+    # "C",
+    # "CSharp",
+    # "CPP",
+    # "Clojure",
+    # "CoffeeScript",
+    # "CSS",
+    # "Dart",
+    # "DM",
+    # "Elixir",
+    # "Go",
+    # "Groovy",
+    # "Haskell",
+    # "HTML",
+    # "Java",
+    # "JavaScript",
+    # "Julia",
+    # "Kotlin",
+    # "Lua",
+    # "MATLAB",
+    # "Objective-C",
+    # "Perl",
+    # "PHP",
+    # "PowerShell",
     "Python",
-    "R",
-    "Ruby",
-    "Rust",
-    "Scala",
-    "Shell",
-    "Swift",
-    "TeX",
-    "TypeScript",
-    "Vim-script",
+    # "R",
+    # "Ruby",
+    # "Rust",
+    # "Scala",
+    # "Shell",
+    # "Swift",
+    # "TeX",
+    # "TypeScript",
+    # "Vim-script",
 ]
 # Escape characters in markdown like # + - etc
 languages_md = [
-    "ActionScript",
-    "C",
-    "C\#",
-    "C\+\+",
-    "Clojure",
-    "CoffeeScript",
-    "CSS",
-    "Dart",
-    "DM",
-    "Elixir",
-    "Go",
-    "Groovy",
-    "Haskell",
-    "HTML",
-    "Java",
-    "JavaScript",
-    "Julia",
-    "Kotlin",
-    "Lua",
-    "MATLAB",
-    "Objective\-C",
-    "Perl",
-    "PHP",
-    "PowerShell",
+    # "ActionScript",
+    # "C",
+    # "C\#",
+    # "C\+\+",
+    # "Clojure",
+    # "CoffeeScript",
+    # "CSS",
+    # "Dart",
+    # "DM",
+    # "Elixir",
+    # "Go",
+    # "Groovy",
+    # "Haskell",
+    # "HTML",
+    # "Java",
+    # "JavaScript",
+    # "Julia",
+    # "Kotlin",
+    # "Lua",
+    # "MATLAB",
+    # "Objective\-C",
+    # "Perl",
+    # "PHP",
+    # "PowerShell",
     "Python",
-    "R",
-    "Ruby",
-    "Rust",
-    "Scala",
-    "Shell",
-    "Swift",
-    "TeX",
-    "TypeScript",
-    "Vim script",
+    # "R",
+    # "Ruby",
+    # "Rust",
+    # "Scala",
+    # "Shell",
+    # "Swift",
+    # "TeX",
+    # "TypeScript",
+    # "Vim script",
 ]
 table_of_contents = """
 * [ActionScript](#actionscript)
@@ -392,14 +392,16 @@ class WriteFile(object):
 
 def run_by_gql():
     ROOT_PATH = os.path.abspath(os.path.join(__file__, "../../"))
-    os.chdir(os.path.join(ROOT_PATH, "source"))
+    # os.chdir(os.path.join(ROOT_PATH, "source"))
 
     processor = ProcessorGQL()  # use Github GraphQL API v4
     repos_stars, repos_forks, repos_languages = processor.get_all_repos()
-    wt_obj = WriteFile(repos_stars, repos_forks, repos_languages)
-    wt_obj.write_head_contents()
-    wt_obj.write_readme_lang_md()
-    wt_obj.save_to_csv()
+    print("repos_stars:")
+    pp.pprint(repos_stars)
+    # wt_obj = WriteFile(repos_stars, repos_forks, repos_languages)
+    # wt_obj.write_head_contents()
+    # wt_obj.write_readme_lang_md()
+    # wt_obj.save_to_csv()
 
 
 if __name__ == "__main__":
