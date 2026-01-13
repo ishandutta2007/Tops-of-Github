@@ -185,6 +185,7 @@ def update_readme_table(readme_content):
     updated_lines = []
     
     header_index = -1
+    new_columns_present = False # Initialize here
     
     # Step 1: Find the table header and extract column names
     for i, line in enumerate(lines):
@@ -199,16 +200,31 @@ def update_readme_table(readme_content):
     header_line = lines[header_index].strip()
     header_columns = [col.strip() for col in header_line.split('|') if col.strip()]
 
+    # Check if "Owner Type" and "Country" are already present in the header
+    new_columns_present = "Owner Type" in header_columns and "Country" in header_columns
+    
     # Find insertion point for "Owner Type" and "Country"
-    # We want to insert them after "Open Issues" and before "Description"
+    insert_at_idx = -1 # Initialize to a safe default
+    
     try:
         open_issues_idx = header_columns.index("Open Issues")
-        description_idx = header_columns.index("Description") # Will be used if we need to splice
+        # description_idx = header_columns.index("Description") # Not directly used for insertion point anymore
+        
+        # Determine the insertion index based on whether columns are new or existing
+        if not new_columns_present:
+            insert_at_idx = open_issues_idx + 1 # Insert after Open Issues
+        else:
+            # If columns are present, find the index of "Owner Type"
+            insert_at_idx = header_columns.index("Owner Type")
+            
     except ValueError:
         print("Error: 'Open Issues' or 'Description' column not found in header. Cannot insert new columns.")
         return readme_content
 
     # Check if "Owner Type" and "Country" are already present in the header
+    # This check needs to be done *after* potentially getting insert_at_idx for existing columns
+    # because header_columns might contain them already.
+    # Re-evaluate new_columns_present after all parsing
     new_columns_present = "Owner Type" in header_columns and "Country" in header_columns
     
     # Step 2: Reconstruct lines before the table
@@ -218,10 +234,11 @@ def update_readme_table(readme_content):
     new_header_columns = list(header_columns) # Create a mutable copy
     if not new_columns_present:
         # Insert "Owner Type" and "Country" after "Open Issues"
-        insert_at_idx = open_issues_idx + 1
         new_header_columns.insert(insert_at_idx, "Owner Type")
         new_header_columns.insert(insert_at_idx + 1, "Country")
-
+    # If new_columns_present is true, new_header_columns already contains them in the right order
+    # so no insertion is needed, just use new_header_columns as is.
+    
     updated_header_line = "| " + " | ".join(new_header_columns) + " |"
     updated_lines.append(updated_header_line)
 
@@ -261,33 +278,45 @@ def update_readme_table(readme_content):
             # Insert or update Owner Type and Country values
             new_data_columns = list(current_data_columns)
             
-            if not new_columns_present:
-                # Insert if not present
-                new_data_columns.insert(insert_at_idx, owner_type)
-                new_data_columns.insert(insert_at_idx + 1, country)
-            else:
-                # Update existing columns if they are present
-                # This assumes insert_at_idx and insert_at_idx + 1 are where Owner Type and Country are
+            # Here, we need to ensure insert_at_idx is correct for data columns as well.
+            # If new_columns_present was true, it means original header had them,
+            # so data rows should also have them, and insert_at_idx is the index of Owner Type.
+            # If not new_columns_present, then we insert at insert_at_idx.
+            
+            # This logic needs to consider the current state of the data row.
+            # A clean way is to always build the data row from its current parsed content,
+            # then insert/replace at the calculated insert_at_idx.
+            
+            # If the current data row already has the new columns, update them.
+            # Otherwise, insert them. The `len(new_header_columns)` check is good.
+            if len(new_data_columns) == len(new_header_columns):
+                # Columns already exist, update them
                 new_data_columns[insert_at_idx] = owner_type
                 new_data_columns[insert_at_idx + 1] = country
+            else:
+                # Columns don't exist, insert them
+                new_data_columns.insert(insert_at_idx, owner_type)
+                new_data_columns.insert(insert_at_idx + 1, country)
+            
 
             updated_data_line = "| " + " | ".join(new_data_columns) + " |"
             updated_lines.append(updated_data_line)
         else:
             # If no match or other issues, still reconstruct based on new column structure if applicable
             # Or just append the line as is if it's already in the new format
-            if new_columns_present and len(current_data_columns) == len(new_header_columns):
-                # If already in the new format, and no owner info to fetch, just keep it.
-                updated_lines.append(line)
-            elif not new_columns_present and len(current_data_columns) == len(header_columns):
-                # If new columns are to be added, but this line doesn't have a project to get data for,
-                # insert empty Owner Type/Country to maintain column count.
-                empty_data_columns = list(current_data_columns)
-                empty_data_columns.insert(insert_at_idx, "")
-                empty_data_columns.insert(insert_at_idx + 1, "")
-                updated_lines.append("| " + " | ".join(empty_data_columns) + " |")
+            # This also needs insert_at_idx to be robust
+            
+            # If the header changed, and this data row needs to conform to new header's column count
+            if len(current_data_columns) < len(new_header_columns):
+                # Insert empty placeholders to match the column count of the new header
+                empty_fillers = [""] * (len(new_header_columns) - len(current_data_columns))
+                new_data_columns = list(current_data_columns)
+                new_data_columns.insert(insert_at_idx, empty_fillers[0])
+                new_data_columns.insert(insert_at_idx + 1, empty_fillers[1])
+                updated_lines.append("| " + " | ".join(new_data_columns) + " |")
             else:
-                updated_lines.append(line) # Fallback
+                updated_lines.append(line) # Append original line
+
 
     return "\n".join(updated_lines)
 
