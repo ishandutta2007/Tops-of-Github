@@ -98,10 +98,10 @@
 | 91 | [pytorch](https://github.com/pytorch/pytorch) | 96570 | 26487 | Python | 16132 | Tensors and Dynamic neural networks in Python with strong GPU acceleration | 2026-01-13T03:48:27Z | Unknown | Unknown |
 | 92 | [supabase](https://github.com/supabase/supabase) | 96077 | 11246 | TypeScript | 256 | The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. | 2026-01-13T03:57:27Z | Unknown | Unknown |
 | 93 | [neovim](https://github.com/neovim/neovim) | 95632 | 6515 | Vim Script | 1692 | Vim-fork focused on extensibility and usability | 2026-01-13T03:38:24Z | Unknown | Unknown |
-| 94 | [thefuck](https://github.com/nvbn/thefuck) | 95170 | 3815 | Python | 293 | Magnificent app which corrects your previous console command. | 2024-07-19T14:56:13Z | Unknown | Unknown |
+| 94 | [thefuck](https://github.com/nvbn/thefuck) | 95170 | 3815 | Python | 293 | Magnificent app which corrects your previous console command. | 2024-07-19T14:56:13Z | User | Unknown |
 | 95 | [Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) | 94993 | 15006 | JavaScript | 34 | 24 Lessons, 12 Weeks, Get Started as a Web Developer | 2026-01-08T21:09:38Z | Unknown | Unknown |
-| 96 | [v2rayN](https://github.com/2dust/v2rayN) | 94442 | 14016 | C# | 7 | A GUI client for Windows, Linux and macOS, support Xray and sing-box and others | 2026-01-10T07:28:58Z | Unknown | Unknown |
-| 97 | [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) | 94239 | 12510 | JavaScript | 80 | Clean Code concepts adapted for JavaScript | 2024-07-29T07:24:37Z | Unknown | Unknown |
+| 96 | [v2rayN](https://github.com/2dust/v2rayN) | 94442 | 14016 | C# | 7 | A GUI client for Windows, Linux and macOS, support Xray and sing-box and others | 2026-01-10T07:28:58Z | User | Unknown |
+| 97 | [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) | 94239 | 12510 | JavaScript | 80 | Clean Code concepts adapted for JavaScript | 2024-07-29T07:24:37Z | User | Unknown |
 | 98 | [fastapi](https://github.com/fastapi/fastapi) | 94017 | 8513 | Python | 29 | FastAPI framework, high performance, easy to learn, fast to code, ready for production | 2026-01-12T10:13:31Z | Unknown | Unknown |
-| 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | Unknown | Unknown |
+| 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | User | Unknown |
 | 100 | [puppeteer](https://github.com/puppeteer/puppeteer) | 93270 | 9361 | TypeScript | 273 | JavaScript API for Chrome and Firefox | 2026-01-12T15:19:50Z | Unknown | Unknown |
