@@ -10,6 +10,12 @@ GITHUB_API_URL = "https://api.github.com"
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
 
+print(f"Using GITHUB_TOKEN: {'Yes' if GITHUB_TOKEN else 'No'}")
+if GITHUB_TOKEN:
+    print(f"Headers configured: {{'Authorization': 'token <redacted>'}}")
+else:
+    print("No GITHUB_TOKEN found, requests will be unauthenticated.")
+
 # Simple city to country mapping (can be expanded)
 CITY_TO_COUNTRY = {
     "san francisco": "USA",
@@ -123,6 +129,7 @@ def get_owner_data(owner_login):
             data["type"] = "User"
             data["location"] = user_data.get("location")
             OWNER_CACHE[owner_login] = data
+            time.sleep(0.1) # Be gentle with the API
             return data
         elif response.status_code == 404:
             # Not a user, try as an organization
@@ -133,6 +140,7 @@ def get_owner_data(owner_login):
                 data["type"] = "Organization"
                 data["location"] = org_data.get("location")
                 OWNER_CACHE[owner_login] = data
+                time.sleep(0.1) # Be gentle with the API
                 return data
             elif response.status_code == 403 and 'rate limit exceeded' in response.text:
                 print("GitHub API rate limit exceeded. Please try again later or provide a GITHUB_TOKEN.")
