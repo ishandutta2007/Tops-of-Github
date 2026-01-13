@@ -1,7 +1,7 @@
 # Tops-of-Github
 
 
-## Top 100 Starsed repositories
+## Top 100 Starred repositories
 
 | Ranking | Project Name | Stars | Forks | Language | Open Issues | Description | Last Commit |
 | ------- | ------------ | ----- | ----- | -------- | ----------- | ----------- | ----------- |
