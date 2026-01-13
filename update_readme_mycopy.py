@@ -2,6 +2,9 @@ import re
 import requests
 import time
 import os
+from dotenv import load_dotenv
+
+load_dotenv() # Load environment variables from .env file
 
 # --- Configuration ---
 README_FILE = "README.md"
