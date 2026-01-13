@@ -183,63 +183,83 @@ def infer_country_from_location(location):
 def update_readme_table(readme_content):
     lines = readme_content.splitlines()
     updated_lines = []
-    in_table = False
-    header_found = False
-    project_data = []
+    in_table_section = False
+    header_line_index = -1
+    separator_line_index = -1
 
-    # Find the table header and separator
     for i, line in enumerate(lines):
-        if "| Ranking | Project Name |" in line and not header_found:
-            # This is the header row
-            updated_lines.append(line + " Owner Type | Country |")
-            updated_lines.append(lines[i+1] + "---------- | ------- |") # Separator line
-            header_found = True
-            in_table = True
+        if "| Ranking | Project Name |" in line:
+            header_line_index = i
+            # Check if Owner Type column already exists
+            if " Owner Type | Country |" not in line:
+                updated_lines.append(line + " Owner Type | Country |")
+                separator_line_index = i + 1
+                # Assuming the separator line is always directly after the header
+                updated_lines.append(lines[separator_line_index] + "---------- | ------- |")
+            else:
+                updated_lines.append(line)
+                updated_lines.append(lines[i+1]) # Append existing separator
+            
+            in_table_section = True
             continue
-        if header_found and in_table and line.strip().startswith('|') and not line.strip().startswith('| ---'):
+        
+        if in_table_section and i == separator_line_index: # Skip the original separator as we've handled it
+            continue
+
+        if in_table_section and line.strip().startswith('|') and not line.strip().startswith('| ---'):
             # This is a data row
-            project_data.append(line)
-        elif in_table and not line.strip().startswith('|'):
-            # End of the table
-            in_table = False
-            break
-        if not header_found:
-            updated_lines.append(line)
+            match = re.search(r'\[.*?\]\((https://github.com/(.*?)/(.*?))\)', line)
+            if match:
+                owner_login = match.group(2)
+                owner_info = get_owner_data(owner_login)
+                owner_type = owner_info["type"]
+                location = owner_info["location"]
+                country = infer_country_from_location(location)
 
-    # Process project data
-    for row_line in project_data:
-        match = re.search(r'\[.*?\]\((https://github.com/(.*?)/(.*?))\)', row_line)
-        if match:
-            owner_login = match.group(2)
-            # print(f"Processing owner: {owner_login}")
-            owner_info = get_owner_data(owner_login)
-            owner_type = owner_info["type"]
-            location = owner_info["location"]
-            country = infer_country_from_location(location)
+                parts = [p.strip() for p in line.split('|')]
+                # Ensure parts list has enough elements for the original columns + new ones if already added
+                # If the Owner Type/Country columns were already added, we need to locate them
+                # For simplicity, let's always assume we are inserting before 'Description' (index 7 if starting from 1)
+                
+                # Filter out empty strings from parts from the split
+                filtered_parts = [p.strip() for p in line.split('|') if p.strip()]
 
-            # Insert new columns before the last column ('Description' or 'Last Commit' in the original structure)
-            parts = [p.strip() for p in row_line.split('|')]
-            # Original: | Ranking | Project Name | Stars | Forks | Language | Open Issues | Description | Last Commit |
-            # New:      | Ranking | Project Name | Stars | Forks | Language | Open Issues | Owner Type | Country | Description | Last Commit |
-            if len(parts) >= 9: # Check if all original columns are present
-                # Reconstruct the line with new columns inserted
-                updated_row_line = (
-                    f"| {parts[1]} | {parts[2]} | {parts[3]} | {parts[4]} | {parts[5]} | {parts[6]} "
-                    f"| {owner_type} | {country} | {parts[7]} | {parts[8]} |"
-                )
+                # The original structure has 8 data columns (index 0 to 7 after filtering and 0-indexing)
+                # If we've already added the columns, there will be more than 8
+                # We need to find the correct insertion point
+                
+                # Reconstruct the line with new columns inserted (assuming original structure)
+                # | Ranking | Project Name | Stars | Forks | Language | Open Issues | Description | Last Commit |
+                # Filtered parts will be: [Ranking, Project Name, Stars, Forks, Language, Open Issues, Description, Last Commit]
+                # Insert Owner Type and Country after Open Issues (index 5) and before Description (index 6)
+                
+                # Check if the row already contains "Owner Type" to prevent re-insertion
+                if "Owner Type" not in parts: # Crude check, assuming "Owner Type" won't be in other fields
+                    new_parts = filtered_parts[:6] + [owner_type, country] + filtered_parts[6:]
+                else: # Columns already exist, update the values if needed or just keep
+                    # This case is tricky if we want to update existing. For now, assume a fresh insert is better.
+                    # If columns already exist, we should reconstruct based on existing structure.
+                    # This means we need to find the indexes of "Owner Type" and "Country"
+                    # For a robust solution, one would parse the header to get column indices.
+                    # For now, if the header already has 'Owner Type', assume the data row also has it and it's correct.
+                    # We would need to update the existing data in the specific cells if we went this route.
+                    # Given the current simple append, if it already exists, the problem is in the header, not here.
+                    
+                    # For now, if the header already contained "Owner Type", we just append the original line
+                    # without re-processing, to prevent duplicate columns in the data rows.
+                    updated_lines.append(line)
+                    continue
+
+                updated_row_line = "| " + " | ".join(new_parts) + " |"
                 updated_lines.append(updated_row_line)
             else:
-                updated_lines.append(row_line) # Fallback if parsing fails
-
-        else:
-            updated_lines.append(row_line) # Append original line if no match
-
-    # Add the remaining lines after the table
-    if in_table: # This means the loop finished while still in table (e.g., end of file)
-        pass # Already processed `project_data`
-    else:
-        for j in range(i, len(lines)):
-            updated_lines.append(lines[j])
+                updated_lines.append(line) # Append original line if no match or other issues
+        elif in_table_section and not line.strip().startswith('|'):
+            # End of the table
+            in_table_section = False
+            updated_lines.append(line)
+        elif not in_table_section:
+            updated_lines.append(line)
 
     return "\n".join(updated_lines)
 
