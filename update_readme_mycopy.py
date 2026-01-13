@@ -184,54 +184,73 @@ def update_readme_table(readme_content):
     lines = readme_content.splitlines()
     updated_lines = []
     
-    header_start_index = -1
-    table_rows_start_index = -1
+    header_index = -1
     
-    # Pass 1: Find table boundaries and check for existing columns
+    # Step 1: Find the table header and extract column names
     for i, line in enumerate(lines):
         if "| Ranking | Project Name |" in line:
-            header_start_index = i
-            # Check if columns already exist
-            if " Owner Type | Country |" in lines[header_start_index]:
-                # Columns already present, no need to add, but still need to re-process data
-                pass
+            header_index = i
             break
             
-    if header_start_index == -1:
-        # Table not found, return original content
+    if header_index == -1:
+        return readme_content # Table not found
+
+    # Extract column names from the header line
+    header_line = lines[header_index].strip()
+    header_columns = [col.strip() for col in header_line.split('|') if col.strip()]
+
+    # Find insertion point for "Owner Type" and "Country"
+    # We want to insert them after "Open Issues" and before "Description"
+    try:
+        open_issues_idx = header_columns.index("Open Issues")
+        description_idx = header_columns.index("Description") # Will be used if we need to splice
+    except ValueError:
+        print("Error: 'Open Issues' or 'Description' column not found in header. Cannot insert new columns.")
         return readme_content
 
-    # Assuming separator is right after header
-    separator_line_index = header_start_index + 1
-    table_rows_start_index = separator_line_index + 1
-
-    # Reconstruct lines before the table
-    updated_lines.extend(lines[:header_start_index])
-
-    # Reconstruct header and separator
-    current_header = lines[header_start_index]
-    current_separator = lines[separator_line_index]
+    # Check if "Owner Type" and "Country" are already present in the header
+    new_columns_present = "Owner Type" in header_columns and "Country" in header_columns
     
-    if " Owner Type | Country |" not in current_header:
-        updated_lines.append(current_header.strip() + " Owner Type | Country |")
-        updated_lines.append(current_separator.strip() + "---------- | ------- |")
-    else:
-        # If headers already exist, append them as is.
-        # This handles cases where the script might have been partially run or manually edited.
-        updated_lines.append(current_header)
-        updated_lines.append(current_separator)
+    # Step 2: Reconstruct lines before the table
+    updated_lines.extend(lines[:header_index])
 
-    # Process table data rows
-    for i in range(table_rows_start_index, len(lines)):
+    # Step 3: Construct new header and separator lines
+    new_header_columns = list(header_columns) # Create a mutable copy
+    if not new_columns_present:
+        # Insert "Owner Type" and "Country" after "Open Issues"
+        insert_at_idx = open_issues_idx + 1
+        new_header_columns.insert(insert_at_idx, "Owner Type")
+        new_header_columns.insert(insert_at_idx + 1, "Country")
+
+    updated_header_line = "| " + " | ".join(new_header_columns) + " |"
+    updated_lines.append(updated_header_line)
+
+    # Construct the new separator line based on the new header
+    separator_line = lines[header_index + 1].strip()
+    separator_parts = [part.strip() for part in separator_line.split('|') if part.strip()]
+    
+    new_separator_parts = list(separator_parts)
+    if not new_columns_present:
+        new_separator_parts.insert(insert_at_idx, "----------")
+        new_separator_parts.insert(insert_at_idx + 1, "-------")
+    
+    updated_separator_line = "| " + " | ".join(new_separator_parts) + " |"
+    updated_lines.append(updated_separator_line)
+
+    # Step 4: Process data rows
+    data_rows_start_index = header_index + 2
+    for i in range(data_rows_start_index, len(lines)):
         line = lines[i]
-        # Stop processing table data if we hit a line that doesn't look like a table row or separator
-        if not line.strip().startswith('|') or line.strip().startswith('| ---'):
-            # Append this line and all subsequent lines as they are outside the table
+        if not line.strip().startswith('|'): # End of table data
             updated_lines.extend(lines[i:])
             break
 
-        # This is a data row
+        # Process data row
         match = re.search(r'\[.*?\]\((https://github.com/(.*?)/(.*?))\)', line)
+        
+        # Split the data line into columns
+        current_data_columns = [col.strip() for col in line.split('|') if col.strip()]
+        
         if match:
             owner_login = match.group(2)
             owner_info = get_owner_data(owner_login)
@@ -239,29 +258,36 @@ def update_readme_table(readme_content):
             location = owner_info["location"]
             country = infer_country_from_location(location)
 
-            # Split the line by '|'. This will give us parts like ['', ' val1 ', ' val2 ', ..., ' val8 ', '']
-            original_parts = line.split('|')
+            # Insert or update Owner Type and Country values
+            new_data_columns = list(current_data_columns)
             
-            # We expect 11 parts for an original 8-column table row (empty + 8 data + empty)
-            if len(original_parts) >= 9: # Checking for at least 8 data parts + leading empty
-                # Construct the new line with inserted owner_type and country
-                # | Ranking | Project Name | Stars | Forks | Language | Open Issues | Owner Type | Country | Description | Last Commit |
-                new_row = (
-                    f"{original_parts[0]}|{original_parts[1]}|{original_parts[2]}|{original_parts[3]}|"
-                    f"{original_parts[4]}|{original_parts[5]}|{original_parts[6]}| {owner_type} | {country} |"
-                    f"{original_parts[7]}|{original_parts[8]}|"
-                )
-                updated_lines.append(new_row)
+            if not new_columns_present:
+                # Insert if not present
+                new_data_columns.insert(insert_at_idx, owner_type)
+                new_data_columns.insert(insert_at_idx + 1, country)
             else:
-                updated_lines.append(line) # Fallback if parsing fails or row is malformed
+                # Update existing columns if they are present
+                # This assumes insert_at_idx and insert_at_idx + 1 are where Owner Type and Country are
+                new_data_columns[insert_at_idx] = owner_type
+                new_data_columns[insert_at_idx + 1] = country
+
+            updated_data_line = "| " + " | ".join(new_data_columns) + " |"
+            updated_lines.append(updated_data_line)
         else:
-            updated_lines.append(line) # Append original line if no match or other issues
-            
-    # If the loop finished without hitting a break (i.e., table goes to end of file)
-    # the remaining lines (which are part of the table) would have been processed
-    # This block handles cases where lines after the table might exist and weren't appended by the break.
-    if len(updated_lines) < len(lines):
-        updated_lines.extend(lines[len(updated_lines):])
+            # If no match or other issues, still reconstruct based on new column structure if applicable
+            # Or just append the line as is if it's already in the new format
+            if new_columns_present and len(current_data_columns) == len(new_header_columns):
+                # If already in the new format, and no owner info to fetch, just keep it.
+                updated_lines.append(line)
+            elif not new_columns_present and len(current_data_columns) == len(header_columns):
+                # If new columns are to be added, but this line doesn't have a project to get data for,
+                # insert empty Owner Type/Country to maintain column count.
+                empty_data_columns = list(current_data_columns)
+                empty_data_columns.insert(insert_at_idx, "")
+                empty_data_columns.insert(insert_at_idx + 1, "")
+                updated_lines.append("| " + " | ".join(empty_data_columns) + " |")
+            else:
+                updated_lines.append(line) # Fallback
 
     return "\n".join(updated_lines)
 
