@@ -7,9 +7,8 @@ import os
 README_FILE = "README.md"
 GITHUB_API_URL = "https://api.github.com"
 # Consider setting a GitHub Personal Access Token as an environment variable
-# GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-# HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
-HEADERS = {} # For now, no authentication. Be mindful of rate limits.
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
 
 # Simple city to country mapping (can be expanded)
 CITY_TO_COUNTRY = {
