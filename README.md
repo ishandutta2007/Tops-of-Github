@@ -7,7 +7,7 @@
 | ------- | ------------ | ----- | ----- | -------- | ----------- | ----------- | ----------- | ---------- | ------- |
 | 1 | [build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) | 456054 | 42749 | Markdown | 254 | Master programming by recreating your favorite technologies from scratch. | 2025-12-26T19:40:39Z | Org | United States of America |
 | 2 | [freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 435792 | 43065 | TypeScript | 204 | freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free. | 2026-01-12T19:17:28Z | Org | United States of America |
-| 3 | [awesome](https://github.com/sindresorhus/awesome) | 429095 | 32836 | None | 16 | 😎 Awesome lists about all kinds of interesting topics | 2026-01-06T15:01:31Z | User | Unknown |
+| 3 | [awesome](https://github.com/sindresorhus/awesome) | 429095 | 32836 | None | 16 | 😎 Awesome lists about all kinds of interesting topics | 2026-01-06T15:01:31Z | User | Finland |
 | 4 | [public-apis](https://github.com/public-apis/public-apis) | 390802 | 41790 | Python | 2 | A collective list of free APIs | 2025-11-04T18:29:01Z | Org | Unknown |
 | 5 | [free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 380378 | 65735 | Python | 36 | :books: Freely available programming books | 2026-01-05T13:41:58Z | Org | Unknown |
 | 6 | [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) | 347125 | 43619 | TypeScript | 27 | Interactive roadmaps, guides and other educational content to help developers grow in their careers. | 2026-01-12T17:39:01Z | User | Unknown |
