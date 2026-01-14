@@ -20,7 +20,7 @@
 | 13 | [react](https://github.com/facebook/react) | 242206 | 50369 | JavaScript | 843 | The library for web and native user interfaces. | 2026-01-10T10:33:52Z | Org | United States of America |
 | 14 | [Python](https://github.com/TheAlgorithms/Python) | 216783 | 49927 | Python | 156 | All Algorithms implemented in Python | 2026-01-05T21:57:41Z | Org | India |
 | 15 | [linux](https://github.com/torvalds/linux) | 213703 | 59909 | C | 0 | Linux kernel source tree | 2026-01-12T19:59:33Z | Org | United States of America |
-| 16 | [vue](https://github.com/vuejs/vue) | 209845 | 33895 | TypeScript | 356 | This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core | 2024-10-10T07:24:15Z | Org | China |
+| 16 | [vue](https://github.com/vuejs/vue) | 209845 | 33895 | TypeScript | 356 | This is the repo for Vue 2. For Vue 3, go to vuejs/core | 2024-10-10T07:24:15Z | Org | China |
 | 17 | [the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) | 202103 | 12278 | None | 0 | A collection of inspiring lists, manuals, cheatsheets, blogs, hacks, one-liners, cli/web tools and more. | 2024-11-19T14:00:38Z | User | Poland |
 | 18 | [computer-science](https://github.com/ossu/computer-science) | 200160 | 24906 | HTML | 12 | 🎓 Path to a free self-taught education in Computer Science! | 2026-01-01T20:56:48Z | Org | Unknown |
 | 19 | [javascript-algorithms](https://github.com/trekhleb/javascript-algorithms) | 195321 | 31120 | JavaScript | 138 | 📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings | 2026-01-02T16:23:33Z | User | United States of America |
