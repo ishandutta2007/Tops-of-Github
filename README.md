@@ -3,7 +3,7 @@
 
 ## Top 100 Starred repositories
 
-| Ranking | Project Name | Stars | Forks | Language | Open Issues | Description | Last Commit | Owner Type | Country |
+| Rank | Project Name | Stars | Forks | Language | Open Issues | Description | Last Commit | Owner Type | Country |
 | ------- | ------------ | ----- | ----- | -------- | ----------- | ----------- | ----------- | ---------- | ------- |
 | 1 | [build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) | 456054 | 42749 | Markdown | 254 | Master programming by recreating your favorite technologies from scratch. | 2025-12-26T19:40:39Z | Org | United States of America |
 | 2 | [freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 435792 | 43065 | TypeScript | 204 | freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free. | 2026-01-12T19:17:28Z | Org | United States of America |
