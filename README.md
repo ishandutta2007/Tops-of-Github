@@ -40,7 +40,7 @@
 | 33 | [stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | 159880 | 29774 | Python | 2390 | Stable Diffusion web UI | 2025-12-18T14:41:34Z | User | Unknown |
 | 34 | [the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line) | 159436 | 14763 | None | 122 | Master the command line, in one page | 2024-06-25T18:13:44Z | User | Unknown |
 | 35 | [ollama](https://github.com/ollama/ollama) | 159309 | 14140 | Go | 1893 | Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models. | 2026-01-13T03:53:06Z | Org | Unknown |
-| 36 | [transformers](https://github.com/huggingface/transformers) | 154979 | 31713 | Python | 1072 | 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. | 2026-01-13T01:11:49Z | Org | United States of America / France |
+| 36 | [transformers](https://github.com/huggingface/transformers) | 154979 | 31713 | Python | 1072 | 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. | 2026-01-13T01:11:49Z | Org | France |
 | 37 | [JavaGuide](https://github.com/Snailclimb/JavaGuide) | 153420 | 46093 | Java | 74 | Java 学习&面试指南（Go、Python 后端面试通用,计算机基础面试总结）。准备后端技术面试，首选 JavaGuide！ | 2026-01-12T08:57:00Z | User | China |
 | 38 | [javascript](https://github.com/airbnb/javascript) | 148023 | 26773 | JavaScript | 100 | JavaScript Style Guide | 2025-11-06T00:54:14Z | Org | United States of America |
 | 39 | [langflow](https://github.com/langflow-ai/langflow) | 143387 | 8284 | Python | 352 | Langflow is a powerful tool for building and deploying AI-powered agents and workflows. | 2026-01-13T03:00:25Z | Org | Unknown |
@@ -106,6 +106,10 @@
 | 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | User | Unknown |
 | 100 | [puppeteer](https://github.com/puppeteer/puppeteer) | 93270 | 9361 | TypeScript | 273 | JavaScript API for Chrome and Firefox | 2026-01-12T15:19:50Z | Org | United States of America |
 
+
+## Repository Owner Country Distribution
+
+![Country Distribution](country_distribution.png)
 
 ## Repository Owner Country Distribution
 
