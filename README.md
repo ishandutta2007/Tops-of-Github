@@ -67,8 +67,8 @@
 | 60 | [free-programming-books-zh_CN](https://github.com/justjavac/free-programming-books-zh_CN) | 116143 | 28359 | None | 0 | :books: 免费的计算机编程类中文书籍，欢迎投稿 | 2024-07-15T08:55:20Z | User | China |
 | 61 | [node](https://github.com/nodejs/node) | 115165 | 34352 | JavaScript | 1741 | Node.js JavaScript runtime ✨🐢🚀✨ | 2026-01-13T01:31:12Z | Org | Unknown |
 | 62 | [excalidraw](https://github.com/excalidraw/excalidraw) | 114268 | 12131 | TypeScript | 2047 | Virtual whiteboard for sketching hand-drawn like diagrams | 2026-01-12T17:23:02Z | Org | Unknown |
-| 63 | [d3](https://github.com/d3/d3) | 112136 | 22840 | Shell | 10 | Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada: | 2025-12-02T17:48:19Z | Org | Unknown |
-| 64 | [three.js](https://github.com/mrdoob/three.js) | 110278 | 36214 | JavaScript | 457 | JavaScript 3D Library. | 2026-01-12T10:52:01Z | User | Unknown |
+| 63 | [d3](https://github.com/d3/d3) | 112136 | 22840 | Shell | 10 | Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada: | 2025-12-02T17:48:19Z | Org | United States of America |
+| 64 | [three.js](https://github.com/mrdoob/three.js) | 110278 | 36214 | JavaScript | 457 | JavaScript 3D Library. | 2026-01-12T10:52:01Z | User | Spain |
 | 65 | [iptv](https://github.com/iptv-org/iptv) | 109416 | 5334 | TypeScript | 339 | Collection of publicly available IPTV channels from all over the world | 2026-01-13T00:11:16Z | Org | Ukraine |
 | 66 | [rust](https://github.com/rust-lang/rust) | 109329 | 14323 | Rust | 10998 | Empowering everyone to build reliable and efficient software. | 2026-01-13T00:11:23Z | Org | United States of America |
 | 67 | [axios](https://github.com/axios/axios) | 108474 | 11479 | JavaScript | 193 | Promise based HTTP client for the browser and node.js | 2026-01-12T14:20:00Z | Org | South Africa |
