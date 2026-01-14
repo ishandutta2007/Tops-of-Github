@@ -71,7 +71,7 @@ def extract_country_data(readme_content):
         parts = [p.strip() for p in line.split('|') if p.strip()]
         if len(parts) > country_col_index:
             country = parts[country_col_index]
-            print(idx,"=>", country)
+            # print(idx,"=>", country)
             country_counts[country] = country_counts.get(country, 0) + 1
     print(country_counts)
     return country_counts
@@ -97,6 +97,7 @@ def generate_pie_chart(country_counts, output_path="country_distribution.png"):
     main_sizes = []
     other_size = 0
 
+    print(labels)
     for i in range(len(labels)):
         if sizes[i] > threshold:
             main_labels.append(labels[i])
@@ -107,18 +108,28 @@ def generate_pie_chart(country_counts, output_path="country_distribution.png"):
     if other_size > 0:
         main_labels.append('Other')
         main_sizes.append(other_size)
+    print(main_labels)
+    print(main_sizes)
+
+    main_labels2 = list(labels)
+    print("main_labels2=>", main_labels2)
+    main_sizes2=[]
+    for i in range(len(labels)):
+        main_sizes2.append(sizes[i])
+    print("main_sizes2=>", main_sizes2)
+    main_labels = main_labels2
+    main_sizes = main_sizes2
 
     fig1, ax1 = plt.subplots(figsize=(10, 10))
-    wedges, texts, autotexts = ax1.pie(main_sizes, labels=main_labels, autopct='%1.1f%%', startangle=90,
-                                       pctdistance=0.85, textprops={'fontsize': 10})
-    
+    wedges, texts, autotexts = ax1.pie(main_sizes, labels=main_labels, autopct='%1.0f%%', startangle=90,
+                                       pctdistance=0.85, textprops={'fontsize': 10}, rotatelabels=True, wedgeprops={'linewidth': 1, 'edgecolor': 'white'})
     # Draw a circle at the center to make it a donut chart
     centre_circle = plt.Circle((0,0),0.70,fc='white')
     fig = plt.gcf()
     fig.gca().add_artist(centre_circle)
     
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.title('Distribution of Repository Owners by Country', fontsize=16)
+    plt.title('Distribution of Repository Owners by Country', fontsize=16, pad=60)
     plt.tight_layout()
     plt.savefig(output_path)
     plt.close()
