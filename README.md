@@ -45,8 +45,8 @@
 | 38 | [javascript](https://github.com/airbnb/javascript) | 148023 | 26773 | JavaScript | 100 | JavaScript Style Guide | 2025-11-06T00:54:14Z | Org | United States of America |
 | 39 | [langflow](https://github.com/langflow-ai/langflow) | 143387 | 8284 | Python | 352 | Langflow is a powerful tool for building and deploying AI-powered agents and workflows. | 2026-01-13T03:00:25Z | Org | Unknown |
 | 40 | [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) | 142195 | 18866 | TypeScript | 2 | Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy. | 2026-01-13T03:35:35Z | User | Unknown |
-| 41 | [yt-dlp](https://github.com/yt-dlp/yt-dlp) | 141596 | 11445 | Python | 1754 | A feature-rich command-line audio/video downloader | 2026-01-06T05:44:30Z | Org | Unknown |
-| 42 | [FreeDomain](https://github.com/DigitalPlatDev/FreeDomain) | 139904 | 2477 | HTML | 0 | DigitalPlat FreeDomain: Free Domain For Everyone | 2026-01-09T15:44:07Z | Org | Unknown |
+| 41 | [yt-dlp](https://github.com/yt-dlp/yt-dlp) | 141596 | 11445 | Python | 1754 | A feature-rich command-line audio/video downloader | 2026-01-06T05:44:30Z | Org | Russian |
+| 42 | [FreeDomain](https://github.com/DigitalPlatDev/FreeDomain) | 139904 | 2477 | HTML | 0 | DigitalPlat FreeDomain: Free Domain For Everyone | 2026-01-09T15:44:07Z | Org | United States of America |
 | 43 | [HelloGitHub](https://github.com/521xueweihan/HelloGitHub) | 139893 | 11042 | Python | 240 | :octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub. | 2025-12-26T00:45:37Z | User | China |
 | 44 | [youtube-dl](https://github.com/ytdl-org/youtube-dl) | 139430 | 10586 | Python | 3619 | Command-line program to download videos from YouTube.com and other video sites | 2025-11-26T03:02:36Z | Org | Spain |
 | 45 | [next.js](https://github.com/vercel/next.js) | 137112 | 30261 | JavaScript | 2035 | The React Framework | 2026-01-13T01:56:56Z | Org | United States of America |
