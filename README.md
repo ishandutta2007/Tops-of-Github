@@ -84,7 +84,7 @@
 | 77 | [Awesome-Hacking](https://github.com/Hack-with-Github/Awesome-Hacking) | 104460 | 9874 | None | 0 | A collection of various awesome lists for hackers, pentesters and security researchers | 2025-01-18T01:48:02Z | Org | Unknown |
 | 78 | [create-react-app](https://github.com/facebook/create-react-app) | 103949 | 27154 | JavaScript | 1843 | Set up a modern web app by running one command. | 2025-02-15T01:32:11Z | Org | United States of America |
 | 79 | [frp](https://github.com/fatedier/frp) | 103367 | 14790 | Go | 35 | A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet. | 2026-01-09T03:33:33Z | User | Unknown |
-| 80 | [papers-we-love](https://github.com/papers-we-love/papers-we-love) | 102293 | 6249 | Shell | 2 | Papers from the computer science community to read and discuss. | 2025-10-10T15:35:14Z | Org | Unknown |
+| 80 | [papers-we-love](https://github.com/papers-we-love/papers-we-love) | 102293 | 6249 | Shell | 2 | Papers from the computer science community to read and discuss. | 2025-10-10T15:35:14Z | Org | United States of America |
 | 81 | [terminal](https://github.com/microsoft/terminal) | 101347 | 9017 | C++ | 1653 | The new Windows Terminal and the original Windows console host, all in the same place! | 2026-01-13T03:05:57Z | Org | United States of America |
 | 82 | [tauri](https://github.com/tauri-apps/tauri) | 101175 | 3291 | Rust | 1212 | Build smaller, faster, and more secure desktop and mobile applications with a web frontend. | 2026-01-12T12:08:39Z | Org | Unknown |
 | 83 | [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3) | 101069 | 16465 | Python | 30 | None | 2025-08-28T03:24:37Z | Org | China |
