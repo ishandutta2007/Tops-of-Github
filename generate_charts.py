@@ -185,8 +185,9 @@ def update_readme_with_chart(readme_path="README.md", chart_image_path="country_
     
     if existing_chart_match:
         # Replace existing chart markdown
-        content = existing_chart_pattern.sub(chart_markdown, content)
-        print("Updated existing chart in README.md")
+        # content = existing_chart_pattern.sub(chart_markdown, content)
+        # print("Updated existing chart in README.md")
+        pass
     else:
         # Insert new chart markdown
         content = content[:insert_idx] + chart_markdown + content[insert_idx:]
