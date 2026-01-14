@@ -102,8 +102,8 @@
 | 95 | [Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) | 94993 | 15006 | JavaScript | 34 | 24 Lessons, 12 Weeks, Get Started as a Web Developer | 2026-01-08T21:09:38Z | Org | United States of America |
 | 96 | [v2rayN](https://github.com/2dust/v2rayN) | 94442 | 14016 | C# | 7 | A GUI client for Windows, Linux and macOS, support Xray and sing-box and others | 2026-01-10T07:28:58Z | User | Unknown |
 | 97 | [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) | 94239 | 12510 | JavaScript | 80 | Clean Code concepts adapted for JavaScript | 2024-07-29T07:24:37Z | User | Unknown |
-| 98 | [fastapi](https://github.com/fastapi/fastapi) | 94017 | 8513 | Python | 29 | FastAPI framework, high performance, easy to learn, fast to code, ready for production | 2026-01-12T10:13:31Z | Org | Unknown |
-| 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | User | Unknown |
+| 98 | [fastapi](https://github.com/fastapi/fastapi) | 94017 | 8513 | Python | 29 | FastAPI framework, high performance, easy to learn, fast to code, ready for production | 2026-01-12T10:13:31Z | Org | Colombia |
+| 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | User | Finland |
 | 100 | [puppeteer](https://github.com/puppeteer/puppeteer) | 93270 | 9361 | TypeScript | 273 | JavaScript API for Chrome and Firefox | 2026-01-12T15:19:50Z | Org | United States of America |
 
 
