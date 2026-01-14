@@ -105,3 +105,7 @@
 | 98 | [fastapi](https://github.com/fastapi/fastapi) | 94017 | 8513 | Python | 29 | FastAPI framework, high performance, easy to learn, fast to code, ready for production | 2026-01-12T10:13:31Z | Org | Unknown |
 | 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | User | Unknown |
 | 100 | [puppeteer](https://github.com/puppeteer/puppeteer) | 93270 | 9361 | TypeScript | 273 | JavaScript API for Chrome and Firefox | 2026-01-12T15:19:50Z | Org | United States of America |
+
+## Repository Owner Country Distribution
+
+![Country Distribution](country_distribution.png)
