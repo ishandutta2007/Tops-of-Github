@@ -106,6 +106,18 @@
 | 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | User | Unknown |
 | 100 | [puppeteer](https://github.com/puppeteer/puppeteer) | 93270 | 9361 | TypeScript | 273 | JavaScript API for Chrome and Firefox | 2026-01-12T15:19:50Z | Org | United States of America |
 
+
+## Repository Owner Country Distribution
+
+![Country Distribution](country_distribution.png)
+
+## Repository Owner Country Distribution
+
+![Country Distribution](country_distribution.png)
+
+## Repository Owner Country Distribution
+
+![Country Distribution](country_distribution.png)
 ## Repository Owner Country Distribution
 
 ![Country Distribution](country_distribution.png)

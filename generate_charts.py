@@ -65,12 +65,15 @@ def extract_country_data(readme_content):
         elif table_started and not line.strip().startswith('|'): # Any line not starting with | after table started
             break
 
-    for line in data_lines:
+    for idx, line in enumerate(data_lines):
+        if idx==0:
+            continue
         parts = [p.strip() for p in line.split('|') if p.strip()]
         if len(parts) > country_col_index:
             country = parts[country_col_index]
+            print(idx,"=>", country)
             country_counts[country] = country_counts.get(country, 0) + 1
-            
+    print(country_counts)
     return country_counts
 
 def generate_pie_chart(country_counts, output_path="country_distribution.png"):
