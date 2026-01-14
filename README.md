@@ -96,9 +96,9 @@
 | 89 | [ant-design](https://github.com/ant-design/ant-design) | 97228 | 54355 | TypeScript | 1287 | An enterprise-class UI design language and React UI library | 2026-01-13T03:59:07Z | Org | China |
 | 90 | [HowToCook](https://github.com/Anduin2017/HowToCook) | 97016 | 10753 | Dockerfile | 451 | 程序员在家做饭方法指南。Programmer's guide about how to cook at home (Simplified Chinese only). | 2026-01-05T17:01:47Z | User | China |
 | 91 | [pytorch](https://github.com/pytorch/pytorch) | 96570 | 26487 | Python | 16132 | Tensors and Dynamic neural networks in Python with strong GPU acceleration | 2026-01-13T03:48:27Z | Org | United States of America |
-| 92 | [supabase](https://github.com/supabase/supabase) | 96077 | 11246 | TypeScript | 256 | The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. | 2026-01-13T03:57:27Z | Org | Unknown |
-| 93 | [neovim](https://github.com/neovim/neovim) | 95632 | 6515 | Vim Script | 1692 | Vim-fork focused on extensibility and usability | 2026-01-13T03:38:24Z | Org | Unknown |
-| 94 | [thefuck](https://github.com/nvbn/thefuck) | 95170 | 3815 | Python | 293 | Magnificent app which corrects your previous console command. | 2024-07-19T14:56:13Z | User | Unknown |
+| 92 | [supabase](https://github.com/supabase/supabase) | 96077 | 11246 | TypeScript | 256 | The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. | 2026-01-13T03:57:27Z | Org | United States of America |
+| 93 | [neovim](https://github.com/neovim/neovim) | 95632 | 6515 | Vim Script | 1692 | Vim-fork focused on extensibility and usability | 2026-01-13T03:38:24Z | Org | China |
+| 94 | [thefuck](https://github.com/nvbn/thefuck) | 95170 | 3815 | Python | 293 | Magnificent app which corrects your previous console command. | 2024-07-19T14:56:13Z | User | Netherlands |
 | 95 | [Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners) | 94993 | 15006 | JavaScript | 34 | 24 Lessons, 12 Weeks, Get Started as a Web Developer | 2026-01-08T21:09:38Z | Org | United States of America |
 | 96 | [v2rayN](https://github.com/2dust/v2rayN) | 94442 | 14016 | C# | 7 | A GUI client for Windows, Linux and macOS, support Xray and sing-box and others | 2026-01-10T07:28:58Z | User | China |
 | 97 | [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript) | 94239 | 12510 | JavaScript | 80 | Clean Code concepts adapted for JavaScript | 2024-07-29T07:24:37Z | User | United States of America |
@@ -106,10 +106,6 @@
 | 99 | [java-design-patterns](https://github.com/iluwatar/java-design-patterns) | 93612 | 27368 | Java | 142 | Design patterns implemented in Java | 2025-10-21T21:30:34Z | User | Finland |
 | 100 | [puppeteer](https://github.com/puppeteer/puppeteer) | 93270 | 9361 | TypeScript | 273 | JavaScript API for Chrome and Firefox | 2026-01-12T15:19:50Z | Org | United States of America |
 
-
-## Repository Owner Country Distribution
-
-![Country Distribution](country_distribution.png)
 
 ## Repository Owner Country Distribution
 

@@ -183,15 +183,14 @@ def update_readme_with_chart(readme_path="README.md", chart_image_path="country_
     existing_chart_pattern = re.compile(r"\n## Repository Owner Country Distribution\n\n!\\[Country Distribution\\]\(.*?\.png\)\\n")
     existing_chart_match = existing_chart_pattern.search(content, insert_idx - len(chart_markdown) - 100) # Search slightly before expected insertion
     
-    if existing_chart_match:
-        # Replace existing chart markdown
-        # content = existing_chart_pattern.sub(chart_markdown, content)
-        # print("Updated existing chart in README.md")
-        pass
-    else:
-        # Insert new chart markdown
-        content = content[:insert_idx] + chart_markdown + content[insert_idx:]
-        print("Inserted new chart into README.md")
+    # if existing_chart_match:
+    # Replace existing chart markdown
+    content = existing_chart_pattern.sub(chart_markdown, content)
+    print("Updated existing chart in README.md")
+    # else:
+    #     # Insert new chart markdown
+    #     content = content[:insert_idx] + chart_markdown + content[insert_idx:]
+    #     print("Inserted new chart into README.md")
 
     return content
 
