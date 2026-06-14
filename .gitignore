@@ -1,3 +1,7 @@
-__pycache__
-access_token.txt
-.env
+*.bak
+*.bk
+*.env
+.cache
+__pycache__/*
+contributors.txt
+temp_repo_clone
