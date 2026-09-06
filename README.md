@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="Tops-of-Github Banner" width="100%" />
+</p>
+
 # Tops-of-Github
 
 
