@@ -2,16 +2,25 @@
   <img src="assets/banner.svg" alt="Tops-of-Github Banner" width="100%" />
 </p>
 
-# Tops-of-Github
+# 🏆 Tops-of-Github 🌟
 
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Tops-of-Github/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Tops-of-Github?style=flat-square&logo=github" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Tops-of-Github/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Tops-of-Github?style=flat-square&logo=github" alt="GitHub Forks" /></a>
+  <a href="https://github.com/ishandutta2007/Tops-of-Github/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Tops-of-Github?style=flat-square&logo=github" alt="GitHub Issues" /></a>
+  <a href="https://github.com/ishandutta2007/Tops-of-Github/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Tops-of-Github?style=flat-square" alt="License" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
-## Top 100 Starred repositories
+## 🌟 Top 100 Starred Repositories 🚀
 
-| Rank | Project Name | Stars | Forks | Language | Open Issues | Description | Last Commit | Owner Type | Country |
+| 🏅 Rank | 📦 Project Name | ⭐ Stars | 🍴 Forks | 💻 Language | 🐛 Open Issues | 📝 Description | 🕒 Last Commit | 👤 Owner Type | 🌍 Country |
 | ------- | ------------ | ----- | ----- | -------- | ----------- | ----------- | ----------- | ---------- | ------- |
 | 1 | [build-your-own-x](https://github.com/codecrafters-io/build-your-own-x) | 456054 | 42749 | Markdown | 254 | Master programming by recreating your favorite technologies from scratch. | 2025-12-26T19:40:39Z | Org | United States of America |
 | 2 | [freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 435792 | 43065 | TypeScript | 204 | Learn math, programming, and computer science for free. | 2026-01-12T19:17:28Z | Org | United States of America |
-| 3 | [awesome](https://github.com/sindresorhus/awesome) | 429095 | 32836 | None | 16 | 😎 Awesome lists about all kinds of interesting topics | 2026-01-06T15:01:31Z | User | Finland |
+| 3 | [awesome](https://github.com/ishandutta2007/Awesome-Awesome-Awesome) | 429095 | 32836 | None | 16 | 😎 Awesome lists about all kinds of interesting topics | 2026-01-06T15:01:31Z | User | Finland |
 | 4 | [public-apis](https://github.com/public-apis/public-apis) | 390802 | 41790 | Python | 2 | A collective list of free APIs | 2025-11-04T18:29:01Z | Org | United States of America |
 | 5 | [free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 380378 | 65735 | Python | 36 | :books: Freely available programming books | 2026-01-05T13:41:58Z | Org | Global |
 | 6 | [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) | 347125 | 43619 | TypeScript | 27 | Interactive roadmaps, guides and other educational content to help developers grow in their careers. | 2026-01-12T17:39:01Z | User | United Kingdom |
@@ -111,6 +120,11 @@
 | 100 | [puppeteer](https://github.com/puppeteer/puppeteer) | 93270 | 9361 | TypeScript | 273 | JavaScript API for Chrome and Firefox | 2026-01-12T15:19:50Z | Org | United States of America |
 
 
-## Repository Owner Country Distribution
+## 🗺️ Repository Owner Country Distribution 📊
 
 ![Country Distribution](country_distribution.png)
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Tops-of-Github&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Tops-of-Github&type=date&legend=top-left)
+
